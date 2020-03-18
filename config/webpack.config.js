@@ -1,4 +1,4 @@
-'use strict';
+
 
 const fs = require('fs');
 const path = require('path');
@@ -40,9 +40,11 @@ const imageInlineSizeLimit = parseInt(
 );
 
 // Check if TypeScript is setup
+// 检测是否启用 ts
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
 // style files regexes
+// 样式的启用配置
 const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
@@ -148,6 +150,7 @@ module.exports = function(webpackEnv) {
       // the line below with these two lines if you prefer the stock client:
       // require.resolve('webpack-dev-server/client') + '?/',
       // require.resolve('webpack/hot/dev-server'),
+      // 热更新，使用 node 的 socket 长连接实现
       isEnvDevelopment &&
         require.resolve('react-dev-utils/webpackHotDevClient'),
       // Finally, this is your app's code:
@@ -345,6 +348,7 @@ module.exports = function(webpackEnv) {
           // "oneOf" will traverse all following loaders until one will
           // match the requirements. When no loader matches it will fall
           // back to the "file" loader at the end of the loader list.
+          // 此项只匹配一个，匹配到就不会在匹配其他的
           oneOf: [
             // "url" loader works like "file" loader except that it embeds assets
             // smaller than specified limit in bytes as data URLs to avoid requests.
