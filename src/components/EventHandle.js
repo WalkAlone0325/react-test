@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react'
 
-export default class EventHandle extends Component() {
+export default class EventHandle extends Component {
 
   constructor(props) {
     super(props)

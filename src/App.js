@@ -3,6 +3,9 @@ import JsxTest from './components/JsxTest'
 import StateMgt from './components/StateMgt'
 import EventHandle from './components/EventHandle'
 import Lifecycle from './components/Lifecycle'
+import ContextTest from './components/ContextTest'
+import HocTest from './components/HocTest'
+import Composition from './components/Composition'
 
 // class组件
 // class App extends Component {
@@ -19,13 +22,19 @@ function App (props) {
     <div>
       <JsxTest />
       {/* 状态管理 */}
-      <StateMgt />
+      {/* <StateMgt /> */}
       {/* 事件处理 */}
       <EventHandle />
       {/* 组件通信 */}
       <h1>{props.title}</h1>
       {/* 生命周期 */}
       <Lifecycle />
+      {/* Context */}
+      <ContextTest />
+      {/* HOC */}
+      <HocTest />
+      {/* 组件复合 */}
+      <Composition />
     </div>
   )
 }

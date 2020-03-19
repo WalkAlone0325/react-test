@@ -13,7 +13,7 @@ export default class JsxTest extends Component {
     const arr = [1, 2, 3].map(num => <li key={num}>{num}</li>)
     return (
       <div>
-        <h1>{title}</h1>
+        {title}
         <ul>{arr}</ul>
         <img src={logo} alt='logo' style={{ width: 100 }} className={style.img} />
       </div>
