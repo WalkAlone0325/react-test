@@ -1,9 +1,12 @@
-import React from 'react';
+import React from 'react'
+import { Button } from 'antd'
+import WrappedNormalLoginForm from './components/FormTest'
 
 function App () {
   return (
     <div>
-      ss
+      <Button type="primary">按钮</Button>
+      <WrappedNormalLoginForm />
     </div>
   );
 }
