@@ -24,6 +24,25 @@ function Dialog (props) {
   )
 }
 
+function RadioGroup (props) {
+  return (
+    <div>{React.Children.map(props.children, radio => {
+      // 要修改虚拟dom 只能克隆它
+      // 参数1：克隆对象  参数2：设置的属性
+      return React.cloneElement(radio, { name: props.name })
+    })}</div>
+  )
+}
+
+function Radio ({ children, ...rest }) {
+  return (
+    <label>
+      <input type="radio" {...rest} />
+      {children}
+    </label>
+  )
+}
+
 export default function Composition () {
   return (
     <div>
@@ -39,6 +58,12 @@ export default function Composition () {
           footer: <button onClick={() => alert('react真好')}>确定</button>
         })}
       </Dialog>
+
+      <RadioGroup name="mvvm">
+        <Radio value="vue">Vue</Radio>
+        <Radio value="react">React</Radio>
+        <Radio value="ng">angular</Radio>
+      </RadioGroup>
     </div>
   )
 }

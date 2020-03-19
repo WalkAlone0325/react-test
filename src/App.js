@@ -6,6 +6,9 @@ import Lifecycle from './components/Lifecycle'
 import ContextTest from './components/ContextTest'
 import HocTest from './components/HocTest'
 import Composition from './components/Composition'
+import HooksTest from './components/HooksTest'
+import HooksReducer from './components/HooksReducer'
+import HooksContext from './components/HooksContext'
 
 // class组件
 // class App extends Component {
@@ -35,6 +38,10 @@ function App (props) {
       <HocTest />
       {/* 组件复合 */}
       <Composition />
+      {/* Hooks */}
+      <HooksTest />
+      <HooksReducer />
+      <HooksContext />
     </div>
   )
 }
